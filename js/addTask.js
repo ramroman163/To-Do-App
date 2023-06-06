@@ -6,6 +6,7 @@ let input = document.querySelector(".form__input-tasks");
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
     addTaskToList(input.value);
+    countTasks();
     form.reset();
 });
 

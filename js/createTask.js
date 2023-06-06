@@ -5,6 +5,7 @@ export const createTask = (text) => {
     const checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     checkbox.classList.add("tasks__checkbox");
+    checkbox.setAttribute("onchange", "updateCounter()");
 
     li.appendChild(checkbox);
 
