@@ -1,0 +1,218 @@
+@import url("./variables.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #0575e6;
+    background: -webkit-linear-gradient(to right, #0575e6, #021b79); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575e6, #021b79);
+    font-size: 16px;
+}
+
+/* Header */
+
+header{
+    padding: var(--padding-container);
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.header__deco{
+    text-decoration: line-through;
+}
+
+/* Main */
+
+main{
+    width: 100%;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input */
+
+.form__tasks{
+    max-width: var(--max-width);
+    padding: var(--padding-container);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form__input-tasks{
+    background: #434656;
+    width: 80%;
+    border: 1px solid #4d4f57;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form__input-tasks:focus{
+    outline: 1px solid white;
+}
+
+/* Tasks */
+
+.tasks{
+    margin-top: 1rem;
+    width: 100%;
+    --padding-container: 2rem 2.5rem;
+    padding: var(--padding-container);
+    max-width: var(--max-width);
+    background: #646778;
+    border-radius: 2rem;
+    min-height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tasks__number{
+    font-size: 1.3rem;
+    color: white;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 500;
+}
+
+.tasks__list{
+    padding: 2rem 0;
+    list-style: none;
+}
+
+.tasks__checkbox{
+    justify-self: center;
+    appearance: none;
+    background: #5D8DF7;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/Check\ Icon.svg");
+    animation: rotation-reverse .5s;
+}
+
+.tasks__checkbox:checked{
+    background-color: #646778;
+    background-image: url("../img/Check\ Icon.svg");
+    animation: rotation .5s;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation-reverse {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+.tasks__checkbox:hover{
+    cursor: pointer;
+}
+
+.tasks__task{
+    padding: .5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    background: #434656;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    color: white;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: opacity .5s;
+}
+
+.tasks__text{
+    transition: all .5s;
+}
+
+.tasks__checkbox:checked + .tasks__text{
+    color: var(--word-checked-color);
+    text-decoration: line-through;
+    transition: all .5s;
+}
+
+/* Footer */
+
+.footer{
+    width: 100%;
+    height: 6.25rem;
+    font-size: 1rem;
+    margin-top: 3.5rem;
+    color: #fff;
+    background: var(--bg-grey);
+    font-family: 'Geologica', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__credits{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.footer__icon{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 875px) {
+    .form__input-tasks{
+        width: 90%;
+    }
+
+    .tasks{
+        width: 90%;
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 540px){
+
+    .form__input-tasks{
+        width: 100%;
+    }
+
+    .tasks__task{
+        font-size: 1rem;
+    }
+
+    .tasks{
+        font-size: 1.1rem;
+        --padding-container: 2rem 1.5rem;
+        width: 95%;
+    }
+}
